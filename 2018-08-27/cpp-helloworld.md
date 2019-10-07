@@ -1,5 +1,6 @@
 ---
 template: 'BlogPost'
+thumb: ''
 title: "[C++] Hello World!"
 category: "C++"
 date: "2018-08-27 23:14"

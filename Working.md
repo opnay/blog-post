@@ -1,5 +1,6 @@
 ---
 template: 'BlogPost'
+thumb: ''
 date: '2019-09-18'
 title: '블로그가 공사중입니다... :D'
 category: 'Notice'

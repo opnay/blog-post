@@ -1,5 +1,6 @@
 ---
 template: 'BlogPost'
+thumb: ''
 date: '2019-08-27'
 title: 'Secondary Markdown Page'
 category: 'General'

@@ -1,5 +1,6 @@
 ---
 template: 'BlogPost'
+thumb: ''
 date: '2019-08-27'
 title: 'Test Title For This is a paragraph'
 category: 'General'
