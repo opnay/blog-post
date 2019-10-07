@@ -1,4 +1,5 @@
 ---
+template: 'BlogPost'
 title: "[C++] 조건문 알아보기"
 category: "C++"
 date: "2018-08-29 00:41"

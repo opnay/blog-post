@@ -1,4 +1,5 @@
 ---
+template: 'BlogPost'
 title: "Kotlin 확장 함수 활용하기"
 category: "Kotlin"
 date: "2018-11-04 20:47"

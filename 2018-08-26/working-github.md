@@ -1,4 +1,5 @@
 ---
+template: 'BlogPost'
 title: "깃허브 블로그 작업중"
 category: "Notice"
 date: "2018-08-26 21:29"

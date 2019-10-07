@@ -1,4 +1,5 @@
 ---
+template: 'BlogPost'
 title: "Kotlin 표준 함수 마스터하기"
 category: "Kotlin"
 date: "2018-10-22 22:52"

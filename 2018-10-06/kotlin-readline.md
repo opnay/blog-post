@@ -1,4 +1,5 @@
 ---
+template: 'BlogPost'
 title: "Kotlin 콘솔에서 입력받는 3가지 방법"
 category: "Kotlin"
 date: "2018-10-06 00:45"

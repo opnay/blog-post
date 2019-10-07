@@ -1,4 +1,5 @@
 ---
+template: 'BlogPost'
 title: "[Kotlin] HelloWorld"
 category: "Kotlin"
 date: "2018-10-05 01:57"
