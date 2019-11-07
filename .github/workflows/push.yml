@@ -1,4 +1,4 @@
-name: CI
+name: Push to Blog
 
 on: [push]
 
@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Checkout Target Repository
       run: |
-        git remote add target http://${{ secrets.TOKEN_GITHUB }}@github.com/${{ secrets.TARGET_REPOSITORY }}.git
+        git remote add target http://${{ github.actor }}:${{ secrets.TOKEN_GITHUB }}@github.com/${{ secrets.TARGET_REPOSITORY }}.git
         git fetch target
         git checkout -b ${{ secrets.TARGET_BRANCH }} target/${{ secrets.TARGET_BRANCH }}
     - name: Config Git
