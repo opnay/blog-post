@@ -13,20 +13,24 @@ create-react-app은 리액트 프로젝트를 처음 시작할때 사용하는 �
 이 커맨드를 왜 많이 사용하냐면, react 프로젝트에서 webpack, eslint 등 빌드 툴들에 이 빌드 툴들의 플러그인까지 설정할건 아주 아주 많습니다. 이를 한방에 해결해주는게 create-react-app이며, 이를 이용해 만들어진 프로젝트는 react-scripts라는 커맨드 패키지가 설치되어 여기서 모두 관리해주게됩니다. 그러면서 저희는 오직 리액트 앱 소스코드만 관리하면되는 장점이 있습니다.
 
 ## 그럼 무슨 문제가 있나요?
-모든 빌드 툴과 플러그인을 관리해주는 만큼 사실 그 설정을 바꾸는 방법은 어렵고 알려지지도 않습니다. 그저 이 react-scripts를 떼어내는 `npm run eject`라는 커맨드로 모든 빌드 툴을 저희 앱 코드에 직접 설치해주는 걸 사용하시는 방법이 많이 알려져있죠.
+모든 빌드 툴과 플러그인을 관리해주었지만 그 설정을 바꾸는 방법은 어렵거나 알려지지도, 존재하지도 않습니다. 그저 이 react-scripts를 떼어내는 `npm run eject`라는 커맨드로 모든 빌드 툴을 프로젝트 코드에 직접 설치해주는 방식을 사용한 방법이 많이 알려져있죠.
+
+이 eject는 모든 툴들을 프로젝트 소스에 병합하는 형태라 한번 사용하게되면 되돌릴 수 없고, 또한 모든 툴들을 직접 관리해줘야 하죠. 예를들어 webpack의 버전을 업그레이드 하고싶다면 react-scripts를 업데이트하면 끝이지만, eject를 하게되면 webpack과 함께 같이 사용하는 플러그인들까지도 함께 맞는 버전으로 업그레이드 해줘야합니다.
 
 ## 그러면 어떻게 할건데?
-최근 2019년 9월 경에 한개의 Pull Request가 creat-react-app의 공식 저장소에 올라왔습니다. ([링크](https://github.com/facebook/create-react-app/pull/7530))
+최근 2019년 9월에 한 Pull Request가 creat-react-app의 공식 저장소에 올라왔습니다. ([링크](https://github.com/facebook/create-react-app/pull/7530))
 
 > 참고: create-react-app 패키지 코드내에 [react-scripts 코드](https://github.com/facebook/create-react-app/tree/master/packages/react-scripts)가 같이있습니다.
 
-해당내용은 "`EXTEND_ESLINT` 환경변수를 넣으면, eslint의 설정을 프로젝트의 소스코드에서 가져오기"라는 내용입니다. 딱 저희가 원하던 내용이고, 이미 Merged된 상태입니다.
+해당내용은 "`EXTEND_ESLINT` 환경변수를 넣으면, eslint의 설정을 프로젝트의 소스에서 가져오는 것을 허용합니다."라는 내용입니다. 딱 저희가 원하던 내용이고, 이미 Merged된 상태입니다.
 
-저희는 대화보다는 코드를 직접 찾아봐 수정사항을 확인합니다. 자세히 보면
+저는 직접 적용하기 위해 Pull Request의 대화 내용 보다는 코드를 직접 찾아봐 수정사항을 확인했습니다. 자세히 보면
 
 ![carbon (2)](https://user-images.githubusercontent.com/1689721/68362273-11803f00-016a-11ea-9663-f9064a3c0253.png)
 
 이와같이 `process.env.EXTEND_ESLINT`를 true로 바꿔주면 eslint의 설정 파일을 저희 앱의 소스코드에서 불러오는 것을 확인할 수 있습니다.
+
+> `process.env`는 node.js에서 환경변수가 저장된 객체입니다.
 
 ## 적용해보자.
 이제 적용하기위해 패키지를 설치해야하는데 그냥 `npm install -g create-react-app`을 사용해 최신버전을 설치해준후 react 프로젝트를 생성하시거나, 이미 진행중인 프로젝트에서는 `npm install react-scripts`를 진행해주시면 됩니다.
