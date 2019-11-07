@@ -1,7 +1,7 @@
 ---
 template: 'BlogPost'
 thumb: ""
-title: "[React] create-react-app에서 eject 없이 eslint 사용하기"
+title: "create-react-app에서 eject 없이 eslint 사용하기"
 category: "React"
 date: "2019-11-07 22:22"
 ---
