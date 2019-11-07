@@ -3,7 +3,7 @@ name: Push to Blog
 on: 
   push:
     branches:
-      - master
+      - gatsby
 
 jobs:
   build:
